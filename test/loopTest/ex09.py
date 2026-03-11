@@ -17,12 +17,12 @@ while True:
         elif check == "n":
             print("→ 미완료")
             notDone += 1
-            notDoneList.append(f"· [{i}] {checkList[i]}")
+            notDoneList.append(f"   · [{i+1}] {checkList[i]}")
     if notDone == 0:
         print("배포 승인! 배포를 진행하세요")
         break
     else :
         print(f"배포 보류! {notDone}개 항목을 해결 후 재시도하세요.")
         for i in range(len(notDoneList)):
-            print(f"{notDoneList[i]:>10}")
+            print(notDoneList[i])
         break
