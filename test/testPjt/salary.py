@@ -40,13 +40,13 @@ def calculate_salary(id):
 # 개인 급여 명세서 출력
 def show_payslip(result) :
     print("\n---------------------------------------")
-    print("\n[직원 정보]")
+    print("\n[직원 정보]\n")
     print(f" - {'직원명':<8} : {result['name']}\n - {'부서':<9} : {result['dept']}\n - {'직급':<9} : {result['grade']}\n")
-    print("[지급 내역]")
+    print("[지급 내역]\n")
     print(f" - {'기본급':<8} : {result['base']:>12,} 원\n - {'성과급':<8} : {result['bonus']:>12,} 원\n - {'초과근무수당':<6} : {result['overtime']:>12,} 원\n - {'식대':<9} : {result['meal']:>12,} 원\n - {'교통비':<8} : {result['transport']:>12,} 원\n - {'총 지급액':<7} : {result['total']:>12,} 원\n")
-    print("[공제 내역]")
+    print("[공제 내역]\n")
     print(f" - {'소득세(3.3%)':<6} : {result['tax']:>12,} 원\n - {'4대보험(4.5%)':<5} : {result['insurance']:>12,} 원\n - {'총 공제액':<7} : {result['deduction']:>12,} 원\n")
-    print(f"[실수령액]\n - {result['salary']:,} 원")
+    print(f"[실수령액]\n\n - {result['salary']:,} 원")
     return
 
 # 전체 급여 현황
@@ -146,7 +146,7 @@ while True:
                 if emp['id'] == inputID:
                     result = inputID
             if result == None:
-                print("\n！존재하지 않는 ID입니다！\n")
+                print("\n* 존재하지 않는 ID입니다\n")
             else: break
         emp = calculate_salary(result)
         show_payslip(emp)
@@ -164,7 +164,7 @@ while True:
         show_salary_rank()
         backMenu()
     elif optionA == "0":
-        print("\n• 종료")
+        print("\n프로그램이 종료되었습니다")
         break
     else :
         print("\n  0 - 5 사이 숫자를 입력하세요")
